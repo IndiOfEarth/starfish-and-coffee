@@ -1,0 +1,94 @@
+Just some HTML/CSS/JS Documentation for my own reference
+
+HTML:
+<article> - For: a forum post, an article, a product car, a comment, an interactive widget
+    - should have a heading
+<svg> - a container for SVG (scalable vector graphics) graphics
+    viewBox - coordinates for the SVG graphic - values - "min-x min-y width height"
+    <path d=""> - an svg element to define the path of an SVG graphic - just find a generator
+<fieldset> - Groups several controls, labels, inputs, etc. in a <form>
+
+CSS:
+
+Understanding Units:
+font-size: rem
+width: % in combination with a max-width, ch
+height: question urself "do i rly need to set height" if yes -> use a min-height
+padding/margin: rem or em, kevin often uses em for padding of buttons
+media queries: em
+
+px only for little things like shadows, borders etc.
+
+
+:root - Applies to <html> tag
+* - this applies to global elements
+box-sizing - sets how the total width and height of an element is calculated
+    border-box; - includes margin and padding into total width, height
+100vh - 100% of vertical device height
+container - Container is for layout/spacing/positioning of items
+position - where an element is located in the document
+    fixed - element removed from normal document flow. Positioned relative to containing block of viewport
+    absolute - element is removed from document flow and positioned relative to closest ancestor (must have an ancestor with position other than 'static')
+    relative - element remains in document flow but is positioned according to top, bottom, left, right
+display -
+    block - takes up entire width of line. Nothing is placed next to it. Forces new line above/below
+    inline - take up minimum amount of line. Only amount needed
+    inline-block - allows a width/height on an inline element
+
+    flex - usually applied to container. (can be aligned to non-container elements) - will align elements horizontally
+        height - the height of the flexbox container
+        flex-direction - the direction of flexbox items - column or row (default)
+        flex-wrap - how flexbox items are wrapped on multilines
+        *justify-content - where flexbox items are aligned on main axis (x-axis or y-axis, depending on flex-direction)
+            - space-between - distribute flex-items with first item at the start and last at the end
+        *align-items - where flexbox items are aligned on cross axis (x-axis or y-axis, depending on flex-direction)
+        align-content
+            - tells how much space to put between lines
+            - for aligning flexbox items on multiline flexbox containers
+
+        flexbox items
+            width - the width of your flexbox item
+            flex-shrink - 0=don't shrink, 1=shrink
+            flex-grow - 0=don't grow, 1=grow
+
+background-size - sets size of element's background image
+    cover - scales image to smallest possible size to fill container
+
+
+margin-inline-start - the margin at the start of an element
+aria-controls - these are the elements that are controlled by the element on which this attribute is set (e.g. a button controlling toggle for a div containing links)
+aria-expanded - indicates if the control is expanded or collapsed and whether child elements are displayed or hidden
+text-decoration -
+    none - stops the a links from showing that stupid thing that shows you've visited
+list style - the type of bullet points on the <li>
+transform - moves an element
+    translateX
+overflow-x - how overflow of elements is dealt with on x-axis
+    hidden - stops horizontal scrolling when elements overflow
+cursor - how the cursor is when it hovers over an element
+    pointer - cursor changes to pointer
+
+@media screen and (max-width:xpx) {} - for setting styling up to a max-width
+@keyframes name - controls intermediate steps in a CSS animation
+    from - starting point
+    to - ending point
+
+Fixed navbar at top
+- change to:- position: sticky;
+- ensure a background-color is set (can be solid or transparent)
+-
+
+JAVASCRIPT:
+
+const - a variable that cannot be changed
+let - a variable that cannot be changed, must be declared before use and has block scope
+var  - used to define any type of variable
+Element.querySelector() - returns the first element within the document that matches specified selector
+Element.getAttribute() - returns the value of an attribute on an element
+() => - arrow function - creates a function
+Element.addEventListener(type, listener) - calls a function when the specified event is delivered to the target
+    - type = a string representing an event type to listen for
+    - listener = the object/function that does something when the event type occurs
+
+
+

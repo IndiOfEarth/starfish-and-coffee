@@ -8,6 +8,7 @@ class Config():
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_COOKIE_SECURE = True  # only sends cookies if running on https
+    SECRET_KEY = 'qrtsyTWZaNQPAXsPYQmQ0A'
 
 class ProductionConfig(Config):
     ENV = "production"

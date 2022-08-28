@@ -31,5 +31,51 @@ function zoom() {
     document.body.style.zoom = "90%"
 }
 
+
+// if website scroll is at the top
+    // navbar backgroundcolor = white
+// else
+    // navbar backgroundColor = brown
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+
+    // if website hasn't scrolled, then remove .scrolled class
+    if (scrolled === 0) {
+        navbar.classList.remove('scrolled');
+    }
+    // but if scrolled, add .scrolled class
+    else {
+        navbar.classList.add('scrolled');
+    }
+
+});
+
+
+
+// Get the modal, button, span (that closes modal)
+var modal = document.getElementById("editModal")
+var btn = document.querySelector(".edit-button");
+var span = document.querySelector(".close");
+
+// when user clicks button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// when user clicks span, close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// when user clicks anywhere outside of modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
 zoom();
 navSlide();

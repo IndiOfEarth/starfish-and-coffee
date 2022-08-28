@@ -74,7 +74,7 @@
 
             </div>
             <div class="card__img" style="background-image: url({{cafe.img_url}});"></div>
-            <a href="#" class="card_link">
+            <a href="{{ url_for('cafe', name=cafe.name) }}" class="card_link">
                 <div class="card__img--hover" style="background-image: url({{cafe.img_url}});"></div>
             </a>
             <div class="card__info">

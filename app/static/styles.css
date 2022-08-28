@@ -38,7 +38,13 @@ hr {
     top: 0;
     background-color: white;
     z-index: 9999;
+    transition: background-color .3s ease;
 }
+
+.scrolled {
+    background-color: #F2EBEB;
+}
+
 
 /*
 .navbar {
@@ -258,56 +264,233 @@ hr {
 
 /* cafeblock-container (flexbox-parent) > cafe-block (flexbox-child of cafeblock-container) > tags-block (flexbox-parent of tag) > tag */
 
-.cafeblock-container {
-    max-width: 100em;
-    margin: 3em auto 0 auto;
-    padding: 2em;
+.cafe-block {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    column-gap: 6em;
+    margin-bottom: 3em;
 }
 
-.cafe-block {
-    margin-bottom: 6em;
+
+.cafe-child-1 {
+    width: 70%;
+    word-wrap: break-word;
+    margin: 4em 0;
+}
+
+.cafe-child-2 {
+    margin: 4em 0;
+    text-align: end;
+}
+
+.cafe-hero-content {
+    position: relative;
+    z-index: 0;
+    height: 35em;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cafe-heading {
+    font-size: 6.5rem;
+    font-weight: lighter;
+    margin-bottom: .5em;
+    word-wrap: normal;
+}
+
+.cafe-location {
+    font-weight: lighter;
+    font-size: 1.9rem;
+    color: gray;
+}
+
+.cafe-features {
+    margin: 1em auto;
+}
+
+.cafe-graphic {
+
+}
+
+.cafe-key {
+    font-size: 1.7rem;
+    margin: 1.5em 0;
+}
+
+.cafe-text {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin: 1em 0;
+}
+
+.cafe-coffeeprice, .cafe-seatsavailable {
+    color: gray;
 }
 
 .cafe-img {
     background-size: cover;
-    height: 300px;
-    width: 380px;
+    width: 100%;
+    height: 22em;
+    object-fit: cover;
 }
 
-.cafe-heading {
-    margin: 0.5em 0;
-    font-weight: lighter;
-    font-size: 2rem;
-}
-
-.cafe-location {
-    color: #8B8B8B;
-    font-weight: lighter;
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 18px;
-}
-
-.tags-block {
-    margin: 1em auto;
+.cafe-others {
     display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
+    column-gap: 2em;
+    row-gap: 1em;
+    margin-bottom: 3em;
 }
 
-.tag {
-    display: inline-block; /* Ensures all elements only take space specified (by width and height) */
-    width: 4em;
-    height: 1.2em;
-    font-size: 1.5rem;
-    background-color: #F2EBEB;
-    text-align: center;
+.edit-button {
+    margin: 0 auto;
+    padding: 1em 3em;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0;
 }
+
+.edit-button:hover {
+    background-color: #F2EBEB;
+    transition: background-color .3s ease;
+}
+
+/* MODAL STYLING */
+
+/* Modal Background (background turns darker when viewing modal) */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enables scroll if needed */
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    bottom: 0; /* Want the content to stick to bottom*/
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+}
+
+/* Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #F2EBEB;
+    color: black;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #F2EBEB;
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 0.5em;
+}
+
+.form-control-label {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    width: 500px;
+    height: 50px;
+}
+
+.form-btn {
+    margin: 0.5em 0;
+    border-radius: 12px;
+    width: 100px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.form-btn:hover {
+    background-color: #DDCBCB;
+}
+
+
+/* The animations */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 
 /* CARD STYLING */
 
@@ -544,6 +727,18 @@ hr {
     .burger {
         display: block;
     }
+    .cafe-block {
+        justify-content: center;
+    }
+    .cafe-heading {
+        font-size: 4.5rem;
+    }
+    .cafe-child-1 {
+        text-align: center;
+    }
+    .cafe-child-2 {
+        text-align: center;
+    }
 }
 
 /* class is activated when burger is clicked*/
@@ -561,6 +756,7 @@ hr {
         transform: translateX(0px);
     }
 }
+
 
 /* burger styling when clicked */
 .toggle .line1 {
