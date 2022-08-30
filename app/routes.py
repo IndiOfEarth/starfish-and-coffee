@@ -90,8 +90,11 @@ def cafe(name):
 
 @app.route("/delete")
 def delete():
-    cafe = request.args.get('id')
-    print(f"Deleted cafe with id: {cafe}")
+    cafe_id = request.args.get('id')
+    print(f"Deleted cafe with id: {cafe_id}")
+    cafe_selected = Cafe.query.get(cafe_id)
+    db.session.delete(cafe_selected)
+    db.session.commit()
     return redirect(url_for('explore'))
 
 
