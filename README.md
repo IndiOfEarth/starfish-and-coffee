@@ -39,13 +39,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![The Home Page](https://raw.githubusercontent.com/IndiOfEarth/starfish-and-coffee/master/Home%20Page.jpg)
+![The Home Page](https://github.com/IndiOfEarth/starfish-and-coffee/blob/master/images/Home%20Page.jpg?raw=true)
 
 Starfish and Coffee is a simple demonstration of using RESTful routing in a website. All the information about the cafes comes from a database file
 and each cafe (and thus its entry in the database) can be viewed, edited and deleted from the website. In a real working website, the ability to edit
 and delete a cafe would be locked behind a login system. I plan on adding this in the future.
 
-![The Cafe Page](https://raw.githubusercontent.com/IndiOfEarth/starfish-and-coffee/master/Explore%20Page.jpg)
+![The Cafe Page](https://github.com/IndiOfEarth/starfish-and-coffee/blob/master/images/Explore%20Page.jpg?raw=true)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
