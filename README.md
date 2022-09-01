@@ -6,7 +6,7 @@
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Website</a>
+    <a href="https://starfishandcoffee.herokuapp.com/">View Website</a>
     ·
     <a href="https://github.com/IndiOfEarth?tab=repositories">See my other projects!</a>
   </p>
